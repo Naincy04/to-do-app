@@ -3,8 +3,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:task/data/database.dart';
 import 'package:task/utils/todo_tile.dart';
 
-import '../utils/add_new_task.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -13,6 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _controller = TextEditingController();
   final _mybox = Hive.box('mybox');
 
   ToDoDatabase db = ToDoDatabase();
@@ -26,6 +25,14 @@ class _HomePageState extends State<HomePage> {
     }
 
     super.initState();
+  }
+
+  void createNewTask() {
+    setState(() {
+      db.toDoList.add([_controller.text, false]);
+      _controller.clear();
+    });
+    db.updateDatabase();
   }
 
   void checkBoxChanged(bool? value, int index) {
@@ -63,7 +70,63 @@ class _HomePageState extends State<HomePage> {
               );
             },
           ),
-          const AddNewTask(),
+          Row(
+            children: [
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Container(
+                  height: 55,
+                  width: 280,
+                  margin: const EdgeInsets.only(bottom: 18, left: 20),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 20,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.white70,
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 10.0,
+                      ),
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: TextField(
+                    controller: _controller,
+                    decoration: const InputDecoration(
+                        hintText: "Add a new task",
+                        border: InputBorder.none,
+                        contentPadding: EdgeInsets.only(left: 2, bottom: 10)),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  padding: const EdgeInsets.only(
+                    bottom: 20,
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_controller.text.isNotEmpty) {
+                        // print("clicked");
+                        createNewTask();
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromARGB(255, 168, 97, 180),
+                      shape: const CircleBorder(),
+                    ),
+                    child: const Icon(
+                      Icons.add,
+                      size: 50,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
