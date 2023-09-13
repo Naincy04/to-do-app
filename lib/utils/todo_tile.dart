@@ -40,11 +40,11 @@ class ToDoTile extends StatelessWidget {
           ),
           trailing: ElevatedButton(
             onPressed: () {},
-            child: Icon(
+            style: ElevatedButton.styleFrom(
+                shape: const CircleBorder(), backgroundColor: Colors.red),
+            child: const Icon(
               Icons.delete,
             ),
-            style: ElevatedButton.styleFrom(
-                shape: CircleBorder(), backgroundColor: Colors.red),
           ),
         ),
       ),
