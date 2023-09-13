@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                 taskname: db.toDoList[index][0],
                 taskCompleted: db.toDoList[index][1],
                 onChanged: (value) => checkBoxChanged(value, index),
-                deleteFunction: (context) => deleteTask,
+                deleteFunction: (context) => deleteTask(index),
               );
             },
           ),
@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                       }
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(255, 168, 97, 180),
+                      backgroundColor: Color.fromARGB(255, 104, 1, 122),
                       shape: const CircleBorder(),
                     ),
                     child: const Icon(
