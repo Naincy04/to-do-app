@@ -1,16 +1,20 @@
-# task
+# Simple To-Do App using Flutter, Hive, and Moor
 
-A new Flutter project.
+This is a simple to-do app built with Flutter that uses Hive for local NoSQL database and Moor for ORM and database operations. The app allows users to add, edit, and delete tasks.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Add new tasks with titles and optional descriptions.
+- Edit existing tasks.
+- Mark tasks as completed.
+- Delete tasks.
+- Persist tasks locally using Hive and Moor.
 
-A few resources to get you started if this is your first Flutter project:
+## Dependencies
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This project uses the following dependencies:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Flutter](https://flutter.dev/)
+- [Hive](https://pub.dev/packages/hive) for local NoSQL database.
+- [Moor](https://pub.dev/packages/moor_flutter) for ORM and database operations.
+- Other dependencies can be found in `pubspec.yaml`.
