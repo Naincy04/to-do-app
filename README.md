@@ -1,6 +1,6 @@
-# Simple To-Do App using Flutter, Hive, and Moor
+# To-Do App
 
-This is a simple to-do app built with Flutter that uses Hive for local NoSQL database and Moor for ORM and database operations. The app allows users to add, edit, and delete tasks.
+This is a simple to-do app built with Flutter that uses Hive for the local NoSQL database and Moor for ORM and database operations. The app allows users to add, edit, and delete tasks.
 
 ## Features
 
