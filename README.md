@@ -18,3 +18,10 @@ This project uses the following dependencies:
 - [Hive](https://pub.dev/packages/hive) for local NoSQL database.
 - [Moor](https://pub.dev/packages/moor_flutter) for ORM and database operations.
 - Other dependencies can be found in `pubspec.yaml`.
+
+
+## Screenshots
+
+<img src="https://github.com/Naincy04/quiz-app/blob/master/quiz_app.png"> &nbsp; &nbsp;
+
+Happy coding!
