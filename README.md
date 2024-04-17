@@ -22,6 +22,6 @@ This project uses the following dependencies:
 
 ## Screenshots
 
-<img src="https://github.com/Naincy04/quiz-app/blob/master/quiz_app.png"> &nbsp; &nbsp;
+<img src="https://github.com/Naincy04/to-do-app/blob/master/to-do.png"> &nbsp; &nbsp;
 
 Happy coding!
